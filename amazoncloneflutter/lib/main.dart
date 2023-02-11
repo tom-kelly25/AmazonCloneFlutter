@@ -15,7 +15,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Text('Flutter Demo Home Page'),
+      home: const Scaffold(
+        body: Center(
+          child: Text(
+            'Amazon Clone Home Page',
+          ),
+        ),
+      ),
     );
   }
 }
