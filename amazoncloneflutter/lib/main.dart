@@ -1,4 +1,6 @@
 import 'package:amazoncloneflutter/constants/global_variables.dart';
+import 'package:amazoncloneflutter/features/auth/screens/auth_screen.dart';
+import 'package:amazoncloneflutter/router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+      onGenerateRoute: (settings) => generateRoute(settings),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Hello'),
@@ -35,10 +38,14 @@ class MyApp extends StatelessWidget {
                 'Amazon Clone Home Page',
               ),
             ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Click'),
-            )
+            Builder(builder: (context) {
+              return ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, AuthScreen.routeName);
+                },
+                child: Text('Click'),
+              );
+            })
           ],
         ),
       ),
